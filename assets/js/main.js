@@ -70,6 +70,50 @@
     });
   });
 
+  const qrSets = {
+    givesendgo: {
+      src: "assets/img/qr-givesendgo.png",
+      alt: "Scan to donate on GiveSendGo",
+      note: "GiveSendGo · card, Apple Pay, and more",
+    },
+    venmo: {
+      src: "assets/img/qr-venmo.png",
+      alt: "Scan to donate on Venmo",
+      note: "Venmo",
+    },
+    paypal: {
+      src: "assets/img/qr-paypal.png",
+      alt: "Scan to donate on PayPal",
+      note: "PayPal",
+    },
+    cashapp: {
+      src: "assets/img/qr-cashapp.png",
+      alt: "Scan to donate on Cash App",
+      note: "Cash App",
+    },
+  };
+
+  document.querySelectorAll("[data-qr]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const set = qrSets[btn.getAttribute("data-qr")];
+      if (!set) return;
+      const group = btn.closest("[data-qr-group]");
+      if (!group) return;
+      group.querySelectorAll("[data-qr]").forEach((other) => {
+        const on = other === btn;
+        other.classList.toggle("is-active", on);
+        other.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      const img = group.querySelector("[data-qr-image]");
+      const note = group.querySelector("[data-qr-note]");
+      if (img) {
+        img.src = set.src;
+        img.alt = set.alt;
+      }
+      if (note) note.textContent = set.note;
+    });
+  });
+
   const venmoAppUrl = (amount) => {
     const params = new URLSearchParams({
       txn: "pay",
@@ -102,8 +146,8 @@
   });
 
   const sharePayload = () => ({
-    title: "Help Gnama Robin fight cancer",
-    text: "They call her Gnama Robin. Liver cancer came first — then doctors found bone cancer during treatment. Her family is raising funds for medical bills. Please give what you can, or share this page.",
+    title: "Help Momma Robin fight cancer",
+    text: "Please help Momma Robin. Liver cancer came first — then doctors found bone cancer during treatment. Her family has already spent more than $60,000 out of pocket. Please give what you can, or share this page.",
     url: window.location.href,
   });
 
