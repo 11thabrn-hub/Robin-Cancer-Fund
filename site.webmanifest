@@ -1,11 +1,11 @@
 {
-  "name": "Robin Cancer Fund",
-  "short_name": "Robin Fund",
-  "description": "Help Robin Whiteman with medical bills for bone cancer and liver cancer.",
+  "name": "In Memory of Robin Jo Whiteman",
+  "short_name": "Robin Jo Whiteman",
+  "description": "A letter from the Whiteman Family in loving memory of Robin Jo Whiteman.",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f6efe6",
-  "theme_color": "#b4232a",
+  "background_color": "#efe8dc",
+  "theme_color": "#efe8dc",
   "icons": [
     {
       "src": "assets/img/apple-touch-icon.png",
