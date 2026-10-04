@@ -159,9 +159,7 @@ main {
 
 .letter-meta {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
+  justify-content: center;
   margin: 1.75rem 0 1.5rem;
   padding: 0.85rem 0;
   border-top: 1px solid var(--line);
@@ -169,6 +167,7 @@ main {
   font-size: 0.92rem;
   font-style: italic;
   color: var(--muted);
+  text-align: center;
 }
 
 .letter-meta p {
@@ -248,10 +247,6 @@ blockquote p {
     height: 10.2rem;
   }
 
-  .letter-meta {
-    flex-direction: column;
-    gap: 0.2rem;
-  }
 }
 
 @media print {
